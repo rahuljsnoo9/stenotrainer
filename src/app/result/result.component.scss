@@ -1,0 +1,28 @@
+/* compare-hindi.component.css */
+.bordered-div {
+    border: 1px solid #ddd;
+    padding: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .highlight-spelling {
+    background-color: rgba(255, 0, 0, 0.3);
+    color: #d9534f !important;
+    font-weight: bold;
+  }
+  
+  .highlight-punctuation {
+    background-color: rgba(255, 165, 0, 0.3);
+    color: #f0ad4e;
+    font-weight: bold;
+  }
+  
+  .highlight-space {
+    background-color: rgba(0, 0, 255, 0.3);
+    color: #0275d8;
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 0 2px;
+  }
+  

@@ -1,0 +1,8 @@
+<div class="container">
+
+    <h5 class="mt-3"><button mat-flat-button class="mx-2" (click)="goBack()">Back </button> Original Text</h5>
+    <p class="border p-4">{{ originalText }}</p>
+
+    <h5>Highlighted Differences</h5>
+    <div [innerHTML]="diffResult" class="diff-result border p-4"></div>
+</div>

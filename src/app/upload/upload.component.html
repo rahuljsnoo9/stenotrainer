@@ -1,0 +1,44 @@
+<mat-card class="mt-5 mx-auto w-50 border">
+    <mat-card-header class="border-bottom">
+        <h6>Upload Data</h6>
+    </mat-card-header>
+    <mat-card-content>
+
+        <form (ngSubmit)="onSubmit()" #uploadForm="ngForm" class="upload-form mt-4">
+            <!-- Title Field -->
+            <mat-form-field appearance="outline">
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="Enter title" name="title" [(ngModel)]="formData.title" required>
+            </mat-form-field>
+
+            <!-- Description Field -->
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="Enter description" name="description" [(ngModel)]="formData.description"
+                    required>
+            </mat-form-field>
+
+            <!-- Transcript Field -->
+            <mat-form-field appearance="outline">
+                <mat-label>Transcript</mat-label>
+                <textarea matInput placeholder="Enter transcript" name="transcript" [(ngModel)]="formData.transcript"
+                    required></textarea>
+            </mat-form-field>
+
+            <!-- Audio File Upload -->
+            <div class="audio-upload">
+                <label for="audioFile">
+                    <input type="file" id="audioFile" (change)="onFileChange($event)" accept="audio/*">
+                    <!-- <button mat-raised-button color="primary" type="button">
+                    <mat-icon>upload_file</mat-icon> Upload Audio
+                </button> -->
+                    <span *ngIf="audioFileName">{{ audioFileName }}</span>
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button mat-raised-button color="accent" type="submit" [disabled]="!uploadForm.form.valid">Submit</button>
+        </form>
+
+    </mat-card-content>
+</mat-card>

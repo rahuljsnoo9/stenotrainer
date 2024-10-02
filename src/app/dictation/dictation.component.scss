@@ -1,0 +1,42 @@
+/* audio-list.component.css */
+.container {
+    margin-top: 20px;
+  }
+  
+  .card {
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  .card-title {
+    font-size: 16px;
+  }
+  
+  .card-text {
+    font-size: 14px;
+  }
+  
+  .btn {
+    margin-top: 10px;
+    // width: 100%;
+    font-size: 14px;
+  }
+
+
+
+.audio-player {
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+  }
+  
+  .progress {
+    background-color: #e0e0e0;
+  }
+  
+  .progress-bar {
+    background-color: #007bff;
+    height: 10px;
+    transition: width 0.1s linear;
+  }
+  

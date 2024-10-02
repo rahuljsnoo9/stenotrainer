@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let audio of audioDataList,let i=index">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex flex-row align-items-center justify-content-between mb-2">
+                        <h6 class="card-title p-0 m-0">{{ audio.title }}</h6>
+                        <select id="speed_{{i}}" style="cursor: pointer;" [(value)]="audio.speed">
+                            @for (speed of speeds; track speed) {
+                            <option style="cursor: pointer;" [value]="speed.value">{{speed.viewValue}}</option>
+                            }
+                        </select>
+                    </div>
+                    <p class="card-text text-muted">{{ audio.description }}</p>
+                    <p class="card-text text-muted">{{ getWordLength(audio.transcript) }} Words</p>
+                    <div class="audio-player">
+                        <div class="row align-items-center m-0">
+                            <div class="col-auto">
+                                <button mat-icon-button (click)="playAudio(audioElement)">
+                                    <mat-icon>{{audioElement.paused?'play_arrow':'pause'}}play_arrow</mat-icon>
+                                </button>
+
+                                <!-- Audio Element -->
+                                <audio #audioElement [src]="audio.file"
+                                    (timeupdate)="onAudioTimeUpdate(audioElement, progressBar)"></audio>
+
+                            </div>
+                            <div class="col">
+                                <div class="progress" style="height: 8px;">
+                                    <div #progressBar class="progress-bar" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Progress Bar -->
+
+                    </div>
+                    <button color="primary" mat-flat-button class="w-100 mt-3" (click)="onPractice(audio)">Take
+                        Test</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

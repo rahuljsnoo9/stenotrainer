@@ -1,0 +1,19 @@
+<div class="compare-div" *ngIf="!showResult">
+    <div class="row justify-content-end w-100">
+        <span class="mat-elevation-z2 timer border">
+            Time Left: {{formattedTime }}
+        </span>
+    </div>
+
+    <section class="w-100 p-4">
+        <mat-form-field class="w-100" appearance="outline">
+            <textarea matInput placeholder="Start typing..." rows="15" [(ngModel)]="transcriptData"></textarea>
+        </mat-form-field>
+        <button mat-flat-button (click)="onSubmit()" [disabled]="!transcriptData">Submit</button>
+    </section>
+</div>
+
+<div class="result-div" *ngIf="showResult">
+    <app-result [transcriptData]="transcriptData" [originalTranscript]="practiceData.transcript"
+        (backEvent)="showResult=false"></app-result>
+</div>

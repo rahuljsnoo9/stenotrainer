@@ -1,0 +1,22 @@
+<div class="main">
+  <div class="header w-100">
+    <mat-toolbar class="bg-transparent">
+      <button mat-button class="example-icon" color="primary" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <button mat-button color="primary" class="mx-3" *ngFor="let item of menus" (click)="onNavigate(item)">
+        <span color="primary">{{item.label}} </span>
+      </button>
+      <span class="example-spacer w-100"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>person</mat-icon>
+      </button>
+    </mat-toolbar>
+
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="footer">
+  </div>
+</div>
